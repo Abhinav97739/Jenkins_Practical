@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    environment {
+        def mystring = "Hello World"
+        def mynum= 10
+        def mybool= true
+    }
+    stages {
+        stage ("Demo"){
+            steps {
+                echo "myString: ${mystring}"
+                echo "myNum: ${mynum}"
+                echo "mybool: ${mybool}"
+            }
+        }
+    }
+}
