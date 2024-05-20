@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Demo"){
+            steps{
+                function("Hello from the demo stage")
+            }
+        }
+    }
+def function(String text, int number){
+    echo "My name is: ${text}"
+    echo "My age is: ${number}"
+}
+}

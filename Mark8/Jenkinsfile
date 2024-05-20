@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    parameters{
+        booleanParam(defaultValue: false, description: "Status", name: "Bool")
+    }
+    stages{
+        stage("Demo"){
+            steps{
+                script{
+                    if(params.Bool== false){
+                        currentBuild.success="Success"
+                        return
+                    }
+                    else{
+                        echo "Parameter is: ${params.Bool}"
+                    }
+                }
+            }
+        }
+    }
+}

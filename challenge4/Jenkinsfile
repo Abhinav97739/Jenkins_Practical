@@ -1,0 +1,27 @@
+pipeline{
+    agent any
+    stages{
+        stage("Clean repo"){
+            steps{
+                deleteDir()
+            }
+        }
+        stage(){
+            steps{
+                
+            }
+        }
+        stage("Build"){
+            steps{
+                dir("Simple-java-maven-app")
+                sh "git clone https://github.com/jenkins-docs/simple-java-maven-app.git"
+            }
+        }
+        stage("Run"){
+            steps{
+                dir("Simple-java-maven-app")
+                sh "mvn install maven"
+            }
+        }
+    }
+}

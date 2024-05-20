@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    environment{
+        def name= "Abhinav"
+        def age= 21
+        def male= true
+    }
+    stages{
+        stage("Demo"){
+            steps{
+                echo "My name is: ${name}"
+                echo "My age is: ${age}"
+                echo "I am male: ${male}"
+            }
+        }
+    }
+}
